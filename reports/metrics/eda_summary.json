@@ -1,0 +1,120 @@
+{
+  "dataset": "uci_power",
+  "n_days": 1440,
+  "start": "2006-12-17",
+  "end": "2010-11-25",
+  "mean": 26.131396709109765,
+  "std": 9.96107153120019,
+  "min": 4.171633333333333,
+  "max": 79.55643333333333,
+  "imputed_days": 22,
+  "imputed_share_%": 1.5277777777777777,
+  "weekday_mean": 24.82326801749513,
+  "weekend_mean": 29.406492630451517,
+  "winter_mean(DJF)": 33.954167744678486,
+  "summer_mean(JJA)": 17.423410612196594,
+  "yoy_trend_%_per_year": -3.6872269802744264,
+  "seasonal_strength": {
+    "weekly": 0.23737966860560822,
+    "yearly": 0.6126698059588347,
+    "trend": 0.002512578780291319
+  },
+  "stationarity": {
+    "adf_stat": -3.6559546250192967,
+    "adf_pvalue": 0.004777119113447501,
+    "kpss_stat": 0.20770196941254723,
+    "kpss_pvalue": 0.1,
+    "adf_seasonal_diff7_pvalue": 6.223337592762319e-13,
+    "interpretation": "ADF rejects a unit root and KPSS does not reject stationarity: the level series is stationary (d=0). Seasonality is handled with seasonal terms / Fourier regressors rather than regular differencing."
+  },
+  "n_anomalies": 108,
+  "anomaly_z_threshold": 4.0,
+  "top_anomalies": [
+    {
+      "date": "2006-12-23",
+      "value": 79.56,
+      "robust_z": 14.97,
+      "type": "spike"
+    },
+    {
+      "date": "2007-02-25",
+      "value": 8.36,
+      "robust_z": -12.77,
+      "type": "dip"
+    },
+    {
+      "date": "2006-12-26",
+      "value": 65.57,
+      "robust_z": 11.89,
+      "type": "spike"
+    },
+    {
+      "date": "2007-02-22",
+      "value": 56.24,
+      "robust_z": 11.07,
+      "type": "spike"
+    },
+    {
+      "date": "2007-02-20",
+      "value": 52.5,
+      "robust_z": 10.88,
+      "type": "spike"
+    },
+    {
+      "date": "2008-11-24",
+      "value": 53.55,
+      "robust_z": 10.75,
+      "type": "spike"
+    },
+    {
+      "date": "2007-03-31",
+      "value": 58.49,
+      "robust_z": 10.18,
+      "type": "spike"
+    },
+    {
+      "date": "2007-01-06",
+      "value": 25.14,
+      "robust_z": -9.57,
+      "type": "dip"
+    },
+    {
+      "date": "2006-12-20",
+      "value": 37.1,
+      "robust_z": 9.3,
+      "type": "spike"
+    },
+    {
+      "date": "2010-02-21",
+      "value": 45.67,
+      "robust_z": 9.02,
+      "type": "spike"
+    }
+  ],
+  "split": {
+    "train": [
+      "2006-12-17",
+      "2010-04-15",
+      1216
+    ],
+    "val": [
+      "2010-04-16",
+      "2010-08-05",
+      112
+    ],
+    "test": [
+      "2010-08-06",
+      "2010-11-25",
+      112
+    ]
+  },
+  "figures": {
+    "series": "reports/figures/01_series_trend.png",
+    "seasonality": "reports/figures/02_seasonality_profiles.png",
+    "decomposition": "reports/figures/03_mstl_decomposition.png",
+    "acf": "reports/figures/04_acf_pacf.png",
+    "anomalies": "reports/figures/05_anomalies.png",
+    "heatmap": "reports/figures/06_calendar_heatmap.png",
+    "submetering": "reports/figures/07_submetering_composition.png"
+  }
+}

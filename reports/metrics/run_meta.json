@@ -1,0 +1,59 @@
+{
+  "dataset": "uci_power",
+  "unit": "kWh",
+  "fast": false,
+  "sarima": {
+    "order": [
+      1,
+      0,
+      2
+    ],
+    "seasonal_order": [
+      1,
+      1,
+      1,
+      7
+    ],
+    "fourier_K": 3,
+    "aic": 8006.733495080389,
+    "bic": 8067.804412940719
+  },
+  "sarima_name": "SARIMAX(1, 0, 2)x(1, 1, 1, 7)+F3",
+  "prophet": {
+    "cps": 0.2,
+    "sps": 10.0,
+    "mode": "additive",
+    "name": "Prophet(cps=0.2,sps=10.0,add)"
+  },
+  "lstm": {
+    "hidden": 64,
+    "layers": 2,
+    "epochs": 28
+  },
+  "gru": {
+    "hidden": 64,
+    "layers": 1,
+    "epochs": 26
+  },
+  "ensemble_members": [
+    "GRU",
+    "LSTM",
+    "Prophet(cps=0.2,sps=10.0,add)"
+  ],
+  "best_model": "Ensemble(mean)",
+  "runtime_minutes": 18.150518802801766,
+  "gbm_importance": {
+    "doy_cos": 0.5038,
+    "doy_sin": 0.1058,
+    "dayofweek": 0.0426,
+    "lag_371": 0.0404,
+    "roll_std_56": 0.0346,
+    "roll_min_28": 0.0304,
+    "roll_std_14": 0.0298,
+    "lag_364": 0.0292,
+    "lag_28": 0.0286,
+    "lag_42": 0.0283,
+    "lag_35": 0.0258,
+    "lag_29": 0.025
+  }
+}

@@ -1,0 +1,71 @@
+[19:07:48] dataset=uci_power  n=1440  train=1216 val=112 test=112
+[19:07:48] EDA: trend / seasonality / anomalies
+[19:08:01] SARIMA: order search by AIC (weekly seasonal ARIMA + yearly Fourier K=3)
+[19:19:29]   selected SARIMAX(1, 0, 2)x(1, 1, 1, 7)+F3  AIC=8006.7
+[19:19:31] Prophet: grid over changepoint / seasonality priors, scored by MAE on validation
+[19:19:34]   cps=0.01  sps=1.0   additive       val MAE=4.160
+[19:19:36]   cps=0.01  sps=1.0   multiplicative val MAE=4.055
+[19:19:38]   cps=0.01  sps=10.0  additive       val MAE=4.172
+[19:19:39]   cps=0.01  sps=10.0  multiplicative val MAE=4.028
+[19:19:40]   cps=0.05  sps=1.0   additive       val MAE=4.010
+[19:19:41]   cps=0.05  sps=1.0   multiplicative val MAE=3.961
+[19:19:43]   cps=0.05  sps=10.0  additive       val MAE=3.997
+[19:19:44]   cps=0.05  sps=10.0  multiplicative val MAE=3.957
+[19:19:45]   cps=0.2   sps=1.0   additive       val MAE=3.783
+[19:19:46]   cps=0.2   sps=1.0   multiplicative val MAE=3.826
+[19:19:47]   cps=0.2   sps=10.0  additive       val MAE=3.774
+[19:19:49]   cps=0.2   sps=10.0  multiplicative val MAE=3.825
+[19:19:51] LSTM: training with early stopping on validation
+[19:20:05]   {'hidden': 32, 'layers': 1}  val MSE(scaled)=0.1819  epochs=27
+[19:20:19]   {'hidden': 64, 'layers': 1}  val MSE(scaled)=0.1857  epochs=26
+[19:20:50]   {'hidden': 64, 'layers': 2}  val MSE(scaled)=0.1811  epochs=28
+[19:20:50] GRU: training with early stopping on validation
+[19:21:56]   {'hidden': 32, 'layers': 1}  val MSE(scaled)=0.1806  epochs=46
+[19:22:44]   {'hidden': 64, 'layers': 1}  val MSE(scaled)=0.1784  epochs=26
+[19:24:44]   {'hidden': 64, 'layers': 2}  val MSE(scaled)=0.1789  epochs=32
+[19:24:44] Validation backtest (rolling origins, models trained on train only)
+  SeasonalNaive(7)                         forecasted in    0.0s
+  SeasonalMean(4w)                         forecasted in    0.0s
+  LastYearScaled                           forecasted in    0.0s
+  SARIMA(1, 0, 2)x(1, 1, 1, 7)             forecasted in    0.6s
+  SARIMAX(1, 0, 2)x(1, 1, 1, 7)+F3         forecasted in    0.6s
+  Prophet(cps=0.2,sps=10.0,add)            forecasted in    4.2s
+  GBM(features,direct)                     forecasted in    0.5s
+  LSTM                                     forecasted in    0.3s
+  GRU                                      forecasted in    0.3s
+[19:24:51] validation MAE:
+GRU                                 3.422
+Ensemble(mean)                      3.458
+LSTM                                3.487
+Prophet(cps=0.2,sps=10.0,add)       3.775
+SARIMAX(1, 0, 2)x(1, 1, 1, 7)+F3    3.801
+GBM(features,direct)                4.035
+SeasonalMean(4w)                    4.776
+SARIMA(1, 0, 2)x(1, 1, 1, 7)        4.813
+LastYearScaled                      4.927
+SeasonalNaive(7)                    5.154
+[19:24:51] Refitting on train+val for the hold-out test
+[19:25:43] Hold-out backtest (rolling origins)
+  SeasonalNaive(7)                         forecasted in    0.0s
+  SeasonalMean(4w)                         forecasted in    0.0s
+  LastYearScaled                           forecasted in    0.0s
+  SARIMA(1, 0, 2)x(1, 1, 1, 7)             forecasted in    1.1s
+  SARIMAX(1, 0, 2)x(1, 1, 1, 7)+F3         forecasted in    1.3s
+  Prophet(cps=0.2,sps=10.0,add)            forecasted in    4.9s
+  GBM(features,direct)                     forecasted in    0.6s
+  LSTM                                     forecasted in    0.3s
+  GRU                                      forecasted in    0.3s
+[19:25:51] hold-out MAE:
+Ensemble(mean)                      4.426
+GRU                                 4.552
+Prophet(cps=0.2,sps=10.0,add)       4.558
+LSTM                                4.622
+SARIMAX(1, 0, 2)x(1, 1, 1, 7)+F3    4.716
+SARIMA(1, 0, 2)x(1, 1, 1, 7)        5.466
+GBM(features,direct)                6.034
+LastYearScaled                      6.099
+SeasonalMean(4w)                    6.548
+SeasonalNaive(7)                    6.829
+[19:25:54] Business impact
+[19:25:55] Drift analysis
+[19:26:04] done in 18.2 min -> reports/REPORT.md

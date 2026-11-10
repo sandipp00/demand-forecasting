@@ -1,0 +1,127 @@
+{
+  "monitored_model": "Ensemble(mean)",
+  "validation_mae_baseline": 3.457701080133033,
+  "distribution_drift_train_vs_test": {
+    "reference_window": [
+      "2009-04-16",
+      "2010-04-15"
+    ],
+    "current_window": [
+      "2010-08-06",
+      "2010-11-25"
+    ],
+    "raw": {
+      "psi": 0.06686089871092239,
+      "ks_stat": 0.12008317025440313,
+      "ks_pvalue": 0.15341813606181723,
+      "ref_mean": 25.793003591287228,
+      "cur_mean": 23.917192746492272,
+      "ref_std": 8.360612359023111,
+      "cur_std": 7.797342515155412
+    },
+    "seasonally_adjusted": {
+      "psi": 0.05030756392466576,
+      "ks_stat": 0.09178082191780822,
+      "ks_pvalue": 0.4347493041360239,
+      "ref_mean": 25.69197291458323,
+      "cur_mean": 26.037326532739048
+    },
+    "verdict": "stable"
+  },
+  "psi_timeline": [
+    {
+      "quarter_end": "2008-03-31",
+      "psi": 0.6955,
+      "mean_shift": -3.143
+    },
+    {
+      "quarter_end": "2008-06-30",
+      "psi": 0.5975,
+      "mean_shift": 3.698
+    },
+    {
+      "quarter_end": "2008-09-30",
+      "psi": 0.1565,
+      "mean_shift": -3.019
+    },
+    {
+      "quarter_end": "2008-12-31",
+      "psi": 0.1059,
+      "mean_shift": -2.059
+    },
+    {
+      "quarter_end": "2009-03-31",
+      "psi": 0.0248,
+      "mean_shift": 0.051
+    },
+    {
+      "quarter_end": "2009-06-30",
+      "psi": 0.0342,
+      "mean_shift": -1.061
+    },
+    {
+      "quarter_end": "2009-09-30",
+      "psi": 0.4071,
+      "mean_shift": 1.7
+    },
+    {
+      "quarter_end": "2009-12-31",
+      "psi": 0.1192,
+      "mean_shift": 0.158
+    },
+    {
+      "quarter_end": "2010-03-31",
+      "psi": 0.1209,
+      "mean_shift": 0.143
+    },
+    {
+      "quarter_end": "2010-06-30",
+      "psi": 0.0979,
+      "mean_shift": 0.704
+    },
+    {
+      "quarter_end": "2010-09-30",
+      "psi": 0.005,
+      "mean_shift": 0.231
+    }
+  ],
+  "page_hinkley_alarms": [
+    {
+      "date": "2010-08-19",
+      "direction": "down"
+    },
+    {
+      "date": "2010-08-30",
+      "direction": "down"
+    },
+    {
+      "date": "2010-09-18",
+      "direction": "up"
+    },
+    {
+      "date": "2010-10-14",
+      "direction": "down"
+    },
+    {
+      "date": "2010-10-17",
+      "direction": "up"
+    },
+    {
+      "date": "2010-10-19",
+      "direction": "down"
+    },
+    {
+      "date": "2010-10-25",
+      "direction": "up"
+    }
+  ],
+  "cusum_alarms": [],
+  "performance": {
+    "test_mae_live": 4.353921325337419,
+    "test_bias_live": -0.4115951458112195,
+    "days_in_alarm": 25,
+    "share_days_in_alarm": 0.25510204081632654,
+    "max_rolling_mae": 6.558082131745546
+  },
+  "figure": "reports/figures/12_drift_monitoring.png"
+}
