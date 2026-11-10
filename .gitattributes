@@ -1,0 +1,20 @@
+# Normalise text files to LF in the repository; checkout uses LF too so that
+# scripts and notebooks are identical on Windows, macOS and Linux.
+* text=auto eol=lf
+
+# Source and docs
+*.py        text eol=lf
+*.md        text eol=lf
+*.txt       text eol=lf
+*.csv       text eol=lf
+*.json      text eol=lf
+*.html      text eol=lf
+*.ipynb     text eol=lf
+.gitignore  text eol=lf
+.gitattributes text eol=lf
+
+# Binary assets
+*.png       binary
+*.jpg       binary
+*.parquet   binary
+*.zip       binary
